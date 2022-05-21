@@ -5,13 +5,22 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     CharacterController controller;
-    Vector2 input;
-    float verticalSpeed = 0.0f;
+    float input; //horizontal input
+    float accel;
+    Vector3 direction;
+    Vector3 velocity;
+    Vector3 horiMove;
+    float vertMove;
 
     public float orientation = 1; // -1 is left, +1 is right
-    public float speed;
-    [SerializeField] float jumpSpeed = 9;
-    [SerializeField] float gravity = 9.8f;
+
+    [SerializeField] float maxSpeed = 18f;
+    [SerializeField] float jumpHeight = 30f;
+    [SerializeField] float gravity = 1.5f;
+    [SerializeField] float groundAcceleration = 10f;
+    [SerializeField] float airAcceleration =7f;
+    [SerializeField] float terminalVelocity = 45f;
+    
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -20,35 +29,37 @@ public class Player : MonoBehaviour
     void Update()
     {
         _updatePlayer();
-        _updateParticles();
     }
 
     void _updatePlayer()
     {
-        /*
-            Gets player movement input
-        */
+        input = Input.GetAxisRaw("Horizontal"); // get movement input
+        // orientation = Mathf.Clamp(orientation + (input * 2), -1, 1); // calculate the orientation (left or right) based on input
+        
+        direction = (transform.forward * input); // get direction of movement based on forward direction
 
-        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized; // get movement input
-        orientation = Mathf.Clamp(orientation + (input.x * 2), -1, 1); // calculate the orientation (left or right) based on input
-        Vector3 move = transform.forward * input.x + new Vector3(0,input.y,0); // get direction of movement based on forward direction
-
+        
         if (controller.isGrounded)
         {
-            verticalSpeed = 0.0f;
-            if (Input.GetKeyDown("space"))
+            vertMove = -0.5f;
+            accel = groundAcceleration;
+
+            if (Input.GetButton("Jump"))
             {
-                verticalSpeed = jumpSpeed;
+                vertMove = jumpHeight;
+                accel = airAcceleration;
             }
         }
-        verticalSpeed -= gravity * Time.deltaTime;
-        move.y = verticalSpeed / speed;
-        controller.Move(move * Time.deltaTime * speed);
-        Debug.DrawLine(transform.position, transform.position + move * speed, Color.blue);
-    }
 
-    void _updateParticles()
-    {
-        return;
+        // velocity.x += accel * Time.deltaTime;
+        // velocity.x += accel * Time.deltaTime;
+        // velocity.y += gravity * Time.deltaTime;
+
+        horiMove = Vector3.Lerp(horiMove, direction * maxSpeed, accel * Time.deltaTime);
+        vertMove = Mathf.Lerp(vertMove, -1 * terminalVelocity, gravity * Time.deltaTime);
+
+        velocity = new Vector3(horiMove.x, vertMove, horiMove.z);
+        
+        controller.Move(velocity * Time.deltaTime);
     }
 }
