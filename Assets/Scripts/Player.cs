@@ -25,17 +25,15 @@ public class Player : MonoBehaviour
 
     void _updatePlayer()
     {
-        /*
-            Gets player movement input
-        */
-
+        //Gets player movement input
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized; // get movement input
         orientation = Mathf.Clamp(orientation + (input.x * 2), -1, 1); // calculate the orientation (left or right) based on input
         Vector3 move = transform.forward * input.x + new Vector3(0,input.y,0); // get direction of movement based on forward direction
-
+        
+        //Basic Gravity Script
         if (controller.isGrounded)
         {
-            verticalSpeed = 0.0f;
+            verticalSpeed = -1.0f;
             if (Input.GetKeyDown("space"))
             {
                 verticalSpeed = jumpSpeed;
@@ -43,8 +41,11 @@ public class Player : MonoBehaviour
         }
         verticalSpeed -= gravity * Time.deltaTime;
         move.y = verticalSpeed / speed;
+        
+        //Application of movement
         controller.Move(move * Time.deltaTime * speed);
         Debug.DrawLine(transform.position, transform.position + move * speed, Color.blue);
+        Debug.Log(controller.isGrounded);
     }
 
     void _updateParticles()

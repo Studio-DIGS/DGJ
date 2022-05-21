@@ -133,6 +133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orientation: 1
   speed: 0
+  jumpSpeed: 9
+  gravity: 9.8
 --- !u!54 &4331841689826455152
 Rigidbody:
   m_ObjectHideFlags: 0

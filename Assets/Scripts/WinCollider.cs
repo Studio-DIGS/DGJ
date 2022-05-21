@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinCollider : MonoBehaviour
 {
     [SerializeField] GameObject player1;
     [SerializeField] GameObject player2;
+    [SerializeField] string nextlevel;
     BoxCollider winCollider;
     // Start is called before the first frame update
     bool player1Win = false;
@@ -20,7 +22,7 @@ public class WinCollider : MonoBehaviour
     {
         if(player1Win && player2Win)
         {
-            Debug.Log("Player has won!\n");
+            SceneManager.LoadScene(sceneName: nextlevel);
             player1Win = false;
             player2Win = false;
         }
@@ -35,7 +37,6 @@ public class WinCollider : MonoBehaviour
         {
             player2Win = true;
         }
-        Debug.Log(player1Win + ", " + player2Win);
     }
     
     void OnTriggerExit(Collider other) {
@@ -47,6 +48,5 @@ public class WinCollider : MonoBehaviour
         {
             player2Win = false;
         }
-        Debug.Log(player1Win + ", " + player2Win);
     }
 }
