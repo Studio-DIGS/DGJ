@@ -8,7 +8,7 @@ public class SwitchSceneManager : MonoBehaviour
     [SerializeField] string nameOfNextScene;
     public void moveToLevel()
     {
-        SceneManager.LoadScene(nameOfNextScene);
+        SceneManager.LoadScene(sceneName: nameOfNextScene);
     }
     public void quitGame()
     {
