@@ -33,7 +33,10 @@ public class CameraBounds : MonoBehaviour
         if (((viewPosP1.x < 0.2f || viewPosP2.x < 0.2f) && horiInput > 0) || futureX > rightBound)
         {
             finalSpeed = 0;
-            transform.position = new Vector3(rightBound, transform.position.y, transform.position.z);
+            if (futureX > rightBound)
+            {
+                transform.position = new Vector3(rightBound, transform.position.y, transform.position.z);
+            }
             return;
         } else 
         {
@@ -43,7 +46,10 @@ public class CameraBounds : MonoBehaviour
         if (((viewPosP1.x > 0.8f || viewPosP2.x > 0.8f) && horiInput < 0) || futureX < leftBound)
         {
             finalSpeed = 0;
+            if (futureX < leftBound)
+            {
             transform.position = new Vector3(leftBound, transform.position.y, transform.position.z);
+            }
             return;
         } else 
         {
