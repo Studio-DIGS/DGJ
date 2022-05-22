@@ -7,7 +7,7 @@ public class OneWayPlatform : MonoBehaviour
 {
     [SerializeField] Vector3 entryDirection = Vector3.up;
     [SerializeField] bool localDirecion = false;
-    [SerializeField, Range(1.0f, 2.0f)] float triggerScale = 1.25f;
+    [SerializeField, Range(1.0f, 3.0f)] float triggerScale = 1.25f;
     new BoxCollider collider = null;
     BoxCollider collisionCheckTrigger = null;
 
