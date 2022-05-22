@@ -18,6 +18,7 @@ public class WorldBounds : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
+            Debug.Log(child);
             float distance = pathCreator.path.GetClosestDistanceAlongPath(child.transform.position);
             child.transform.forward = pathCreator.path.GetDirectionAtDistance(distance);
 
