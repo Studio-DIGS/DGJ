@@ -1543,10 +1543,6 @@ PrefabInstance:
       propertyPath: speed
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 1624792219515321725, guid: 1280e5e24fd76354c8a0d88069c782bf, type: 3}
-      propertyPath: gravity
-      value: 9.8
-      objectReference: {fileID: 0}
     - target: {fileID: 2290655205818271013, guid: 1280e5e24fd76354c8a0d88069c782bf, type: 3}
       propertyPath: mainCamera
       value: 

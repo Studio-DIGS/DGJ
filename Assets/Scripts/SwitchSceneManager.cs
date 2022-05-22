@@ -5,12 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class SwitchSceneManager : MonoBehaviour
 {
-    public void moveToLevel1()
+    [SerializeField] string nameOfNextScene;
+    public void moveToLevel()
     {
-        SceneManager.LoadScene(sceneName:"Level1");
+        SceneManager.LoadScene(nameOfNextScene);
     }
     public void quitGame()
     {
         Application.Quit();
+    }
+    public void moveToMainMenu()
+    {
+        SceneManager.LoadScene(sceneName: "MainMenu");
     }
 }
