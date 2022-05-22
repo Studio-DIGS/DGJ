@@ -22,6 +22,5 @@ public class MovingPlatform : MonoBehaviour
     {
         dstTravelled += speed * Time.deltaTime;
         transform.position = pathCreator.path.GetPointAtDistance(dstTravelled, end);
-        transform.position = new Vector3 (transform.position.x, height, transform.position.z);
     }
 }
