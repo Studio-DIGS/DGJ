@@ -5,16 +5,17 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     CharacterController controller;
-    float input; //horizontal input
+    public float input; //horizontal input
     float accel;
     Vector3 direction;
     Vector3 velocity;
     Vector3 horiMove;
     float vertMove;
+    public bool isJumping;
 
     public float orientation = 1; // -1 is left, +1 is right
 
-    [SerializeField] float maxSpeed = 18f;
+    public float maxSpeed = 18f;
     [SerializeField] float jumpHeight = 30f;
     [SerializeField] float gravity = 1.5f;
     [SerializeField] float groundAcceleration = 10f;
@@ -43,9 +44,11 @@ public class Player : MonoBehaviour
         {
             vertMove = -0.5f;
             accel = groundAcceleration;
+            isJumping = false;
 
             if (Input.GetButton("Jump"))
             {
+                isJumping = true;
                 vertMove = jumpHeight;
                 accel = airAcceleration;
             }
