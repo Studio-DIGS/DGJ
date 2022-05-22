@@ -6710,7 +6710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e0c4bebf4c0dd47af0a302f0b36491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfNextScene: Level4
+  nameOfNextScene: Level5
 --- !u!1 &2031654365 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cf8fc7531e994a84093006ee74a76122, type: 3}
