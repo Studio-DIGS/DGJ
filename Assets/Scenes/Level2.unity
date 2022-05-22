@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.36287418, g: 0.56617343, b: 0.8437131, a: 1}
+  m_IndirectSpecularColor: {r: 0.36290717, g: 0.5661654, b: 0.8437098, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -604,6 +604,22 @@ PrefabInstance:
       value: SwitchSceneManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1490582088230144733, guid: 26f4bdb74e1c0764e8ea7f658d4aeaf7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412050875747615209, guid: 26f4bdb74e1c0764e8ea7f658d4aeaf7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2027370013}
+    - target: {fileID: 4412050875747615209, guid: 26f4bdb74e1c0764e8ea7f658d4aeaf7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: moveToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412050875747615209, guid: 26f4bdb74e1c0764e8ea7f658d4aeaf7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwitchSceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412050875747615209, guid: 26f4bdb74e1c0764e8ea7f658d4aeaf7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
