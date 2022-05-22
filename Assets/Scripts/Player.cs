@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         controller = GetComponent<CharacterController>();
+        DontDestroyOnLoad(this.gameObject);
     }
 
     void Update()
