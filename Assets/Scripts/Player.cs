@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     void _updatePlayer()
     {
         input = Input.GetAxisRaw("Horizontal"); // get movement input
-        // orientation = Mathf.Clamp(orientation + (input * 2), -1, 1); // calculate the orientation (left or right) based on input
+        orientation = Mathf.Clamp(orientation + (input * 2), -1, 1); // calculate the orientation (left or right) based on input
         
         direction = (transform.forward * input); // get direction of movement based on forward direction
 
