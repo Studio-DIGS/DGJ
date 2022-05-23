@@ -14,7 +14,7 @@ public class WorldBounds : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (pathCreator != null)
         {
