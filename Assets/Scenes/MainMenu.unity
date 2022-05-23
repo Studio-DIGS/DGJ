@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 902889874}
-  m_IndirectSpecularColor: {r: 0.32749015, g: 0.28215766, b: 0.41700894, a: 1}
+  m_IndirectSpecularColor: {r: 0.22420385, g: 0.19509822, b: 0.25448608, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 440cc67992715464b9b35f5dc12aef1e, type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 20338c3bc36bddc44bfbd25a45303de2, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 869167a5dd78b60419c58680b90b37f7, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5371,7 +5371,7 @@ GameObject:
   - component: {fileID: 869649393}
   m_Layer: 0
   m_Name: Music
-  m_TagString: Untagged
+  m_TagString: Music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5388,8 +5388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebce01d1370e99f4694954b973e866d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 869649394}
-  playing: 0
 --- !u!82 &869649394
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5401,8 +5399,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 36a56f02a62d0d74aa4b119cabf8eaa9, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.734
+  m_PlayOnAwake: 1
+  m_Volume: 0.462
   m_Pitch: 1
   Loop: 1
   Mute: 0
